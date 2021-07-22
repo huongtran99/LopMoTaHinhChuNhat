@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Mô Tả Hình Chữ Nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500"  style="border:1px solid black;"></canvas>
+<script>
+    let Rectangle = function(height, width){
+        this.getHeight = height;
+        this.getWidth = width;
+
+        this.getArea = function () {
+            return height * width;
+        }
+
+        this.getPerimeter = function () {
+            return (height + width) * 2;
+        }
+    };
+
+    let height = parseInt(prompt("Nhập chiều cao"));
+    let width = parseInt(prompt("Nhập chiều rộng"));
+    let rectangle = new Rectangle(height, width);
+
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+
+    alert("area = " + area + " ; perimeter = " + perimeter);
+
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillRect(150,150,width,height);
+</script>
+</body>
+</html>
